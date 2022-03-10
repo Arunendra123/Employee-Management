@@ -42,34 +42,37 @@
 			<div class="col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">
-						<h1 class="text-center text-primary">Add Employee</h1>
-						<form th:action="@{/register}" method="post">
-							<div class="form-row">
+						<h1 class="text-center text-primary">Edit Employee</h1>
+						<form th:action="@{/update}" method="post" th:object="${emp}">
+						
+							<input type="hidden" class="form-control" name="id" th:value="${emp.id}">
+						
+							<div class="form-row" >
 								<label>Full Name</label> <input type="text" class="form-control"
-									id="inputName2" placeholder="Full Name" name="name">
+									id="inputName2" placeholder="Full Name" name="name" th:value="${emp.name}">
 							</div>
 
 							<div class="form-row">
 								<label>Address</label> <input type="text" class="form-control"
-									id="inputAddress2" placeholder="Address" name="address">
+									id="inputAddress2" placeholder="Address" name="address" th:value="${emp.address}">
 							</div>
 
 							<div class="form-row">
 								<label>Email</label> <input type="email" class="form-control"
-									id="inputEmail2" placeholder="Email" name="email">
+									id="inputEmail2" placeholder="Email" name="email" th:value="${emp.email}">
 							</div>
 
 							<div class="form-row">
 								<label>Phone No</label> <input type="number"
-									class="form-control" id="inputPhone2" placeholder="Phone No" name="phoneNo">
+									class="form-control" id="inputPhone2" placeholder="Phone No" name="phoneNo" th:value="${emp.phoneNo}">
 							</div>
 
 							<div class="form-row">
 								<label>Salary</label> <input type="number" class="form-control"
-									id="inputSalary2" placeholder="Salary" name="salary">
+									id="inputSalary2" placeholder="Salary" name="salary" th:value="${emp.salary}">
 							</div>
                             <br>
-							<button type="submit" class="btn btn-primary btn-block">Add</button>
+							<button type="submit" class="btn btn-primary btn-block">update</button>
 						</form>
 					</div>
 				</div>

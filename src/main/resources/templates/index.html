@@ -30,7 +30,7 @@
 				<li class="nav-item active"><a class="nav-link" href="/">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="addemp">Add
+				<li class="nav-item"><a class="nav-link" href="/addemp">Add
 						Employee</a></li>
 			</ul>
 		</div>
@@ -55,16 +55,21 @@
 				<th scope="col">Email</th>
 				<th scope="col">Phone No</th>
 				<th scope="col">Salary</th>
+				<th scope="col">Action</th>
+				
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="e : ${session.emp}">
+			<tr th:each="e : ${emp}">
 				<td th:text="${e.id}"></td>
 				<td th:text="${e.name}"></td>
 				<td th:text="${e.Address}"></td>
 				<td th:text="${e.email}"></td>
 				<td th:text="${e.phoneNo}"></td>
 				<td th:text="${e.salary}"></td>	
+				<td><a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${e.id})}">Edit</a>
+				    <a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${e.id})}">Delete</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
